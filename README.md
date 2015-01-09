@@ -1,7 +1,7 @@
 #angular-materialPreloader
 An `Material Design Preloader` directive for angular(without using jquery) that recreates the Material pre-loader (as seen on inbox).  
 
-demo is at `http://waseembepari.github.io/angular-material-preloader`
+demo is at http://waseembepari.github.io/angular-material-preloader
 
 How to use angular-materialPreloader?
 ==========================
