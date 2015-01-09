@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="materialPreloaderApp">
 
   <head>
     <meta charset='utf-8'>
@@ -7,12 +7,13 @@
     <meta name="description" content="Angular-material-preloader : An Material Design Preloader directive for angular(without using jquery) that recreates the Material pre-loader (as seen on inbox).  ">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/materialPreloader.min.css">
 
     <title>Angular-material-preloader</title>
   </head>
 
-  <body>
-
+  <body ng-controller="demoMaterialPreloader">
+  <material-preloader position="top" height="5px" col1='#159756' col2='#da4733' col3='#3b78e7' col4='#fdba2c' ></material-preloader>
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
@@ -36,8 +37,9 @@
 
 <p>An <code>Material Design Preloader</code> directive for angular(without using jquery) that recreates the Material pre-loader (as seen on inbox).  </p>
 
-<p>demo is at <code>http://waseembepari.github.io/angular-material-preloader</code></p>
 
+<button type="button" class="btn" ng-click="materialPreloader = true;">On</button> 
+<button type="button" class="btn" style="background:#d93434" ng-click="materialPreloader = false;">Off</button> 
 <h1>
 <a id="how-to-use-angular-materialpreloader" class="anchor" href="#how-to-use-angular-materialpreloader" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use angular-materialPreloader?</h1>
 
@@ -138,6 +140,10 @@
     </div>
 
     
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js"></script>
 
+
+    <script type="text/javascript" src="javascripts/angular-Material-Preloader.min.js"></script>
+    <script type="text/javascript" src="javascripts/mainApp.js"></script>
   </body>
 </html>

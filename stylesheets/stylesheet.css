@@ -423,3 +423,29 @@ Small Device Styles
   }
 
 }
+
+
+/**
+ * custom button
+ */
+
+ .btn {
+   background: #3498db;
+   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+   background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+   background-image: -o-linear-gradient(top, #3498db, #2980b9);
+   background-image: linear-gradient(to bottom, #3498db, #2980b9);
+   font-family: Arial;
+   color: #ffffff;
+   font-size: 12px;
+   background: #3498db;
+   padding: 10px 20px 10px 20px;
+   text-decoration: none;
+   border: none;
+ }
+
+ .btn:hover {
+   background: #3cb0fd;
+   text-decoration: none;
+ }
