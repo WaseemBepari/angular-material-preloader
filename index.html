@@ -1,0 +1,29 @@
+<!DOCTYPE html >
+<html ng-app="materialPreloaderApp">
+<head>
+	<title></title>
+	<link href="css/materialPreloader.css" rel="stylesheet prefetch">
+
+</head>
+<body ng-controller="demoMaterialPreloader">
+<material-preloader position="top" height="5px" col1='#159756' col2='#da4733' col3='#3b78e7' col4='#fdba2c' ></material-preloader>
+<div id="header" >
+		<ul>
+			<li><a class="on" href="#" ng-click="switch()">On</a></li>
+			<li><a class="off" href="#" ng-click="switch()">Off</a></li>
+		</ul>
+	</div>
+
+	<div id="box">
+	<h1>Material Design Preloader</h1>
+	<p>Directive for angular that recreates the Material Design preloader <br>(as seen on inbox).</p>
+	<p><small>Created by <a target="_blank" href="https://twitter.com/waseembepari">@waseembepari</a></small></p>
+
+	</div>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js"></script>
+
+
+	<script type="text/javascript" src="js/angular-Material-Preloader.js"></script>
+	<script type="text/javascript" src="js/mainApp.js"></script>
+</body>
+</html>
