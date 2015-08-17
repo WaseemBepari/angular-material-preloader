@@ -1,149 +1,176 @@
-<!DOCTYPE html>
-<html ng-app="materialPreloaderApp">
-
+<!doctype html>
+<html ng-app="materialPreloaderApp" ng-csp>
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Angular-material-preloader : An Material Design Preloader directive for angular(without using jquery) that recreates the Material pre-loader (as seen on inbox).  ">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/materialPreloader.min.css">
-
-    <title>Angular-material-preloader</title>
-  </head>
-
-  <body ng-controller="demoMaterialPreloader">
-  <material-preloader position="top" height="5px" col1='#159756' col2='#da4733' col3='#3b78e7' col4='#fdba2c' ></material-preloader>
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/WaseemBepari/angular-material-preloader">View on GitHub</a>
-
-          <h1 id="project_title">Angular-material-preloader</h1>
-          <h2 id="project_tagline">An Material Design Preloader directive for angular(without using jquery) that recreates the Material pre-loader (as seen on inbox).  </h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/WaseemBepari/angular-material-preloader/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/WaseemBepari/angular-material-preloader/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a id="angular-materialpreloader" class="anchor" href="#angular-materialpreloader" aria-hidden="true"><span class="octicon octicon-link"></span></a>angular-materialPreloader</h1>
-
-<p>An <code>Material Design Preloader</code> directive for angular(without using jquery) that recreates the Material pre-loader (as seen on inbox).  </p>
-
-
-<button type="button" class="btn" ng-click="materialPreloader = true;">On</button> 
-<button type="button" class="btn" style="background:#d93434" ng-click="materialPreloader = false;">Off</button> 
-<h1>
-<a id="how-to-use-angular-materialpreloader" class="anchor" href="#how-to-use-angular-materialpreloader" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use angular-materialPreloader?</h1>
-
-<p>Add the Following code to the &lt;head&gt; of your document.</p>
-
-<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">link</span> <span class="pl-e">href</span>=<span class="pl-s1"><span class="pl-pds">"</span>css/materialPreloader.min.css<span class="pl-pds">"</span></span> <span class="pl-e">rel</span>=<span class="pl-s1"><span class="pl-pds">"</span>stylesheet prefetch<span class="pl-pds">"</span></span>&gt;
-&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s1"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>js/angular-Material-Preloader.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
-
-<p>Place the <code>template folder</code> in your root directory</p>
-
-<p>Add <code>angularMaterialPreloader</code> dependency to your module</p>
-
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> myApp <span class="pl-k">=</span> angular.module(<span class="pl-s1"><span class="pl-pds">"</span>app<span class="pl-pds">"</span></span>, [<span class="pl-s1"><span class="pl-pds">"</span>angularMaterialPreloader<span class="pl-pds">"</span></span>])</pre></div>
-
-<p>Include <code>&lt;div material-preloader &gt;&lt;/div&gt;</code> directive in your html template.</p>
-
-<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">material-preloader</span> <span class="pl-e">position</span>=<span class="pl-s1"><span class="pl-pds">"</span>top<span class="pl-pds">"</span></span> <span class="pl-e">height</span>=<span class="pl-s1"><span class="pl-pds">"</span>5px<span class="pl-pds">"</span></span> <span class="pl-e">col1</span>=<span class="pl-s1"><span class="pl-pds">'</span>#159756<span class="pl-pds">'</span></span> <span class="pl-e">col2</span>=<span class="pl-s1"><span class="pl-pds">'</span>#da4733<span class="pl-pds">'</span></span> <span class="pl-e">col3</span>=<span class="pl-s1"><span class="pl-pds">'</span>#3b78e7<span class="pl-pds">'</span></span> <span class="pl-e">col4</span>=<span class="pl-s1"><span class="pl-pds">'</span>#fdba2c<span class="pl-pds">'</span></span> &gt;&lt;/<span class="pl-ent">div</span>&gt;
-// material-preloader as attribute</pre></div>
-
-<p>Or Include <code>&lt;material-preloader &gt;&lt;/material-preloader&gt;</code> directive as element in your html template.</p>
-
-<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">material</span><span class="pl-e">-preloader</span> <span class="pl-e">position</span>=<span class="pl-s1"><span class="pl-pds">"</span>top<span class="pl-pds">"</span></span> <span class="pl-e">height</span>=<span class="pl-s1"><span class="pl-pds">"</span>5px<span class="pl-pds">"</span></span> <span class="pl-e">col1</span>=<span class="pl-s1"><span class="pl-pds">'</span>#159756<span class="pl-pds">'</span></span> <span class="pl-e">col2</span>=<span class="pl-s1"><span class="pl-pds">'</span>#da4733<span class="pl-pds">'</span></span> <span class="pl-e">col3</span>=<span class="pl-s1"><span class="pl-pds">'</span>#3b78e7<span class="pl-pds">'</span></span> <span class="pl-e">col4</span>=<span class="pl-s1"><span class="pl-pds">'</span>#fdba2c<span class="pl-pds">'</span></span> &gt;&lt;/<span class="pl-ent">material</span><span class="pl-e">-preloader</span>&gt;
-// material-preloader as element</pre></div>
-
-<h4>
-<a id="variable" class="anchor" href="#variable" aria-hidden="true"><span class="octicon octicon-link"></span></a>VARIABLE</h4>
-
-<div class="highlight highlight-javascript"><pre>$scope.materialPreloader <span class="pl-k">=</span> TRUE/FALSE;
-<span class="pl-c">// Use true or false to on/off the materialpreloader.</span></pre></div>
-
-<h3>
-<a id="materialpreloader-options" class="anchor" href="#materialpreloader-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>materialPreloader Options</h3>
-
-<table>
-<thead>
-<tr>
-<th>attribute</th>
-<th>Required</th>
-<th>Description</th>
-<th>Options</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>position</td>
-<td>No</td>
-<td>Position to place the preloader</td>
-<td>top/bottom</td>
-<td>top</td>
-</tr>
-<tr>
-<td>height</td>
-<td>No</td>
-<td>The height of the preloader bar</td>
-<td>any length</td>
-<td>5px</td>
-</tr>
-<tr>
-<td>col1</td>
-<td>No</td>
-<td>Color 1 option</td>
-<td>any color</td>
-<td>#159756</td>
-</tr>
-<tr>
-<td>col2</td>
-<td>No</td>
-<td>Color 2 option</td>
-<td>any color</td>
-<td>#da4733</td>
-</tr>
-<tr>
-<td>col3</td>
-<td>No</td>
-<td>Color 3 option</td>
-<td>any color</td>
-<td>#3b78e7</td>
-</tr>
-<tr>
-<td>col4</td>
-<td>No</td>
-<td>Color 4 option</td>
-<td>any color</td>
-<td>#fdba2c</td>
-</tr>
-</tbody>
-</table>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Angular-material-preloader maintained by <a href="https://github.com/WaseemBepari">WaseemBepari</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js"></script>
-
-
-    <script type="text/javascript" src="javascripts/angular-Material-Preloader.min.js"></script>
-    <script type="text/javascript" src="javascripts/mainApp.js"></script>
+    <!-- build:css(.) styles/vendor.css -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/material.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css" />
+    <link rel="stylesheet" href="bower_components/google-code-prettify/bin/prettify.min.css" />
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-controller="MainCtrl">
+    <!--[if lte IE 8]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Add your site or application content here -->
+    <div material-preloader mp-position="top" mp-height="4px" mp-col1='#159756' mp-col2='#da4733' mp-col3='#3b78e7' mp-col4='#fdba2c' ></div>
+    <div class="togglebutton pull-right">
+        <label>
+            <input type="checkbox" ng-model="materialPreloader"> use the toggle to on/off the preloader.
+        </label>
+    </div>
+    <header class="container text-center top-pd">
+      <img src="http://www.google.com/inbox/assets/images/intro/intro-logo.png" width="100" alt="" />
+      <h1>Material Design Preloader</h1>
+      <i>An Material Design Preloader directive for angularJs (without using jquery) that recreates the pre-loader (as seen on inbox).</i>
+      <ul class="list-unstyled list-inline">
+        <li ><a class="btn btn-primary btn-flat" href="//github.com/WaseemBepari/angular-material-preloader/zipball/master"><i class="fa fa-download"></i> Download </a></li>
+        <li ><a class="btn btn-primary btn-flat" href="#doc-sec"><i class="fa fa-file-text"></i> documentation </a></li>
+        <li ><a class="btn btn-primary btn-flat" href="//github.com/WaseemBepari/angular-material-preloader"><i class="fa fa-github-alt"></i> github </a></li>
+      </ul>
+  <small class="author-link">
+    <Created>by <a target="_blank" href="//twitter.com/waseembepari">@WaseemBepari</a>  </Created>
+  </small>
+    </header>
+    <section class="container" id="doc-sec">
+      <article class="well">
+        <h3>How to use angular-materialPreloader ?</h3>
+        <article class="group-text">
+          <p>Add the following code to the <code>&lt;head&gt;</code> of your document.</p>
+<pre class="prettyprint linenums">
+&lt;link href=&quot;css/materialPreloader.min.css&quot; rel=&quot;stylesheet prefetch&quot;&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/angular-Material-Preloader.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+        </article>
+        <article class="group-text">
+          <p>Add <code>angularMaterialPreloader</code> dependency to your module</p>
+<pre class="prettyprint linenums">
+angular.module(&quot;app&quot;, [&quot;angularMaterialPreloader&quot;])
+</pre>
+        </article>
+        <article class="group-text">
+          <p>Include <code>&lt;div material-preloader &gt;&lt;/div&gt;</code> directive in your html template.</p>
+<pre class="prettyprint linenums">
+//material-preloader as attribute
+&lt;div material-preloader position=&quot;top&quot; height=&quot;5px&quot; col1=&#39;#159756&#39; col2=&#39;#da4733&#39; col3=&#39;#3b78e7&#39; col4=&#39;#fdba2c&#39; &gt;&lt;/div&gt;
+</pre>
+        </article>
+        <article class="group-text">
+          <p>Or Include <code>&lt;material-preloader &gt;&lt;/material-preloader&gt;</code> directive as element in your html template.</p>
+<pre class="prettyprint linenums">
+// material-preloader as element
+&lt;material-preloader position=&quot;top&quot; height=&quot;5px&quot; col1=&#39;#159756&#39; col2=&#39;#da4733&#39; col3=&#39;#3b78e7&#39; col4=&#39;#fdba2c&#39; &gt;&lt;/material-preloader&gt;
+</pre>
+        </article>
+      </article>
+      <article class="well">
+        <h3>Variable</h3>
+<pre class="prettyprint linenums">
+// Use true or false to on/off the materialpreloader.
+$scope.materialPreloader = true/false;
+</pre>
+      </article>
+      <article class="well">
+        <h3>Options</h3>
+        <table class="table table-striped table-hover ">
+          <thead>
+            <tr>
+              <th>attribute</th>
+              <th>Required</th>
+              <th>Description</th>
+              <th>Options</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>position</td>
+              <td>No</td>
+              <td>Position to place the preloader</td>
+              <td>top/bottom</td>
+              <td>top</td>
+            </tr>
+            <tr>
+              <td>height</td>
+              <td>No</td>
+              <td>The height of the preloader bar</td>
+              <td>any length</td>
+              <td>5px</td>
+            </tr>
+            <tr>
+              <td>col1</td>
+              <td>No</td>
+              <td>Color 1 option</td>
+              <td>any color</td>
+              <td>#159756</td>
+            </tr>
+            <tr>
+              <td>col2</td>
+              <td>No</td>
+              <td>Color 2 option</td>
+              <td>any color</td>
+              <td>#da4733</td>
+            </tr>
+            <tr>
+              <td>col3</td>
+              <td>No</td>
+              <td>Color 3 option</td>
+              <td>any color</td>
+              <td>#3b78e7</td>
+            </tr>
+            <tr>
+              <td>col4</td>
+              <td>No</td>
+              <td>Color 4 option</td>
+              <td>any color</td>
+              <td>#fdba2c</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+    !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+    (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+    r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+    }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+    </script>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+    <script src="bower_components/google-code-prettify/bin/prettify.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/controllers/main.js"></script>
+    <script src="javascripts/directives/materialpreloader.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $.material.init();
+        prettyPrint()
+        });
+    </script>
+    <!-- endbuild -->
   </body>
 </html>
