@@ -5,6 +5,7 @@
     width:100%;
     opacity: 1;
     -webkit-transition: opacity 0.2s linear;
+    z-index : 999;
     transition: opacity 0.2s linear;
 }
 
